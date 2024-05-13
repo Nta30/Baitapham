@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<math.h>
+ void Nhap(int n, int m, int a[][100]){
+ 	int i,j;
+ 	for(i=0;i<n;i++){
+ 		for(j=0;j<m;j++){
+ 			scanf("%d",&a[i][j]);
+		 }
+	 }
+ }
+ void Xuat(int n, int m, int a[][100]){
+ 	int i,j;
+ 	for(i=0;i<n;i++){
+ 		for(j=0;j<m;j++){
+ 			printf("%d ",a[i][j]);
+		 }
+		 printf("\n");
+	 }
+ }
+ void NhanMaTran(int n1, int m1, int a[][100], int n2, int m2, int b[][100], int n3, int m3, int c[][100]){
+ 	int i,j,k;
+ 	for(i=0;i<n3;i++){
+ 		for(j=0;j<m3;j++){
+ 			for(k=0;k<m1;k++){
+ 				c[i][j]+=a[i][k]*b[k][j];
+			 }		
+		 }
+	 }
+ }
+ int main(){
+ 	int n1,m1,n2,m2;
+ 	printf("Nhap vao so hang va so cot cua ma tran 1:");
+ 	scanf("%d%d",&n1,&m1);
+ 	int a[100][100];
+ 	printf("Nhap ma tran 1:\n");
+ 	Nhap(n1,m1,a);
+ 	printf("Nhap vao so hang va so cot cua ma tran 2:");
+ 	scanf("%d%d",&n2,&m2);
+ 	int b[100][100];
+ 	printf("Nhap ma tran 2:\n");
+ 	Nhap(n2,m2,b);
+ 	int c[100][100]={0};
+ 	NhanMaTran(n1,m1,a,n2,m2,b,n1,m2,c);
+ 	printf("Ket qua phep nhan la:\n"); 
+ 	Xuat(n1,m2,c);
+ } 
