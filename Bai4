@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<math.h>
+ void Nhap(int n, int m, int a[][100]){
+ 	int i,j;
+ 	for(i=0;i<n;i++){
+ 		for(j=0;j<m;j++){
+ 			scanf("%d",&a[i][j]);
+		 }
+	 }
+ }
+ void Xuat(int n, int m, int a[][100]){
+ 	int i,j;
+ 	for(i=0;i<n;i++){
+ 		for(j=0;j<m;j++){
+ 			printf("%d ",a[i][j]);
+		 }
+		 printf("\n");
+	 }
+ }
+ float funct(int n, int m, int a[][100]){
+ 	int i,j,sum=0,count=0;
+ 	for(i=0;i<n;i++){
+ 		for(j=0;j<m;j++){
+ 			sum+=a[i][j];
+ 			count+=1;
+		 }
+	 }
+	 return (float)sum/count;
+ }
+ int main(){
+ 	int n,m;
+ 	printf("Nhap vao so hang va so cot cua ma tran:");
+ 	scanf("%d%d",&n,&m);
+ 	int a[100][100];
+ 	printf("Nhap ma tran 1:\n");
+ 	Nhap(n,m,a);
+ 	printf("Trung binh cong cua ma tran la:%f",funct(n,m,a));
+ } 
