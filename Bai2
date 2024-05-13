@@ -1,0 +1,31 @@
+#include<stdio.h>
+ void Nhap(int a[], int n){
+ 	int i;
+ 	for(i=0;i<n;i++){
+ 		scanf("%d",&a[i]);
+	 }
+ }
+ void revArr(int a[], int n, int c[]){
+ 	int i=0,j=n;
+ 	while(j--){
+ 		c[i++]=a[j];
+	 }
+ }
+ void Xuat(int a[], int n){
+ 	int i;
+ 	for(i=0;i<n;i++){
+ 		printf("%d ",a[i]);
+	 }
+ }
+ int main(){
+ 	int n;
+ 	printf("Nhap vao so phan tu cua day:");
+ 	scanf("%d",&n);
+ 	int a[n];
+ 	printf("Moi nhap vao mang:");
+ 	Nhap(a,n);
+ 	int c[n];
+ 	revArr(a,n,c);
+ 	printf("Day C dao nguoc la:\n");
+ 	Xuat(c,n);
+ }
